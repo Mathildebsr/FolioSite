@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import BubbleMenu from './components/BubbleMenu';
 import TextPressure from './components/TextPressure';
 import TextType from './components/TextType';
@@ -13,9 +14,13 @@ import ProjectsSection from './components/ProjectsSection';
 import SkillsSection from './components/SkillsSection';
 import ContactSection from './components/ContactSection';
 
+// Pages dynamiques
+import ProjectPage from './pages/ProjectPage';
+import Project404 from './pages/Project404';
+
 import './index.css';
 
-const App = () => {
+const AppLayout = () => {
   const menuItems = [
     {
       label: 'accueil',
@@ -79,25 +84,25 @@ const App = () => {
         staggerDelay={0.12}
       />
 
-      {/* Home Section */}
+      {/* Sections */}
       <HeroSection />
-
-      {/* About Section */}
       <AboutSection />
-
-      {/* Folder Section */}
       <FolderSection />
-
-      {/* Projects Section */}
       <ProjectsSection />
-
-      {/* Skills Section */}
       <SkillsSection />
-
-      {/* Contact Section */}
       <ContactSection />
     </div>
   );
 };
+
+const App = () => (
+  <Router basename="/FolioSite"> {/* 👈 nom de ton repo */}
+    <Routes>
+      <Route path="/" element={<AppLayout />} />
+      <Route path="/project/404" element={<Project404 />} />
+      <Route path="/project/:projectName" element={<ProjectPage />} />
+    </Routes>
+  </Router>
+);
 
 export default App;

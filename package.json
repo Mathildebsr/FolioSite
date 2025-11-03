@@ -26,6 +26,7 @@
     "ogl": "^1.0.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.5",
     "three": "^0.180.0"
   },
   "devDependencies": {
@@ -34,4 +35,3 @@
     "vite": "^7.1.9"
   }
 }
-  
