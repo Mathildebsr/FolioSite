@@ -1,0 +1,52 @@
+.folder-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+}
+
+.folder-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  margin-top: 8rem;
+  transform: scale(2.2); /* AGRANDISSEMENT FORT */
+  transform-origin: center;
+}
+
+.folder-item {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  text-align: center;
+  color: #727070;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+}
+
+/* Ajustement feuille du milieu une fois déplié */
+.folder.open .paper:nth-child(3) {
+  transform: translate(-50%, -80%) rotateZ(0deg) !important; /* Remontée */
+}
+.folder.open .paper:nth-child(2) {
+  transform: translate(30%, -40%) rotateZ(25deg) !important; /* Remontée */
+}
+.folder.open .paper:nth-child(1) {
+  transform: translate(-140%, -40%) rotateZ(-25deg) !important; /* Remontée */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .folder-content {
+    transform: scale(1.6);
+  }
+}
+
+@media (max-width: 480px) {
+  .folder-content {
+    transform: scale(1.3);
+  }
+}

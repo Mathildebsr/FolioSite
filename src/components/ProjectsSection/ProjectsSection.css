@@ -1,0 +1,302 @@
+.projects-section {
+  position: relative;
+  background: #0a0a0a;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Container d'animation */
+.animation-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Styles des rectangles CLICABLES */
+.project-rectangle {
+  position: absolute;
+  width: 80vw;
+  height: 80vh;
+  max-width: 800px;
+  max-height: 900px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: bold;
+  color: white;
+  transition: transform 0.1s ease-out;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* NUMÉRO EN HAUT À GAUCHE */
+.project-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background: black;
+  padding: 8px 12px;
+  border-radius: 4px;
+  z-index: 3;
+}
+
+/* TITRE À GAUCHE ROTATION -90° */
+.project-title-side {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) rotate(-90deg);
+  transform-origin: center;
+  font-family: 'inter', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  background: black;
+  padding: 12px 20px;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 3;
+}
+
+/* AJUSTEMENTS INDIVIDUELS */
+.project-title-pink {
+  left: -70px; /* Plus à gauche */
+  top: 200px;
+}
+
+.project-title-blue {
+  left: -65px; /* Moins à gauche */
+}
+
+.project-title-orange {
+  left: -85px;
+}
+
+.project-title-purple {
+  left: -75px; /* Encore plus à gauche */
+}
+
+/* TOOLTIP AU SURVOL */
+.project-rectangle::after {
+  content: "Cliquez pour découvrir le projet !";
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.project-rectangle:hover::after {
+  opacity: 1;
+}
+
+/* TITRE CENTRAL EXISTANT */
+.project-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 4rem;
+  color:#00000000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+}
+
+/* Couleurs des rectangles */
+.project-rectangle.white { 
+  background-color: rgb(0, 0, 0);
+  z-index: 1;
+  background-image: url('/images/accueilis.jpg');
+}
+
+.project-rectangle.pink { 
+  background-color: #ff66b2;
+  z-index: 2;
+  transform: translateY(160vh);
+  background-image: url('/images/projets.jpg');
+}
+
+.project-rectangle.blue { 
+  background-color: #007bff;
+  z-index: 3;
+  transform: translateY(230vh);
+  background-image: url('/images/competences.jpg');
+}
+
+.project-rectangle.orange { 
+  background-color: #ff9900;
+  z-index: 4;
+  transform: translateY(300vh);
+  background-image: url('/images/about.jpg');
+}
+
+.project-rectangle.purple { 
+  background-color: #9933ff;
+  z-index: 5;
+  transform: translateY(370vh);
+  background-image: url('/images/accueil.jpg');
+}
+
+/* Rectangles transparents pour l'animation */
+.project-rectangle.transparent {
+  background: transparent !important;
+  color: transparent;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* MODAL STYLES */
+.project-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.157);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-modal {
+  background: white;
+  width: 90%;
+  height: 90%;
+  max-width: 1000px;
+  border-radius: 20px;
+  position: relative;
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  z-index: 2000;
+}
+
+.project-modal-overlay.active .project-modal {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #000000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  padding: 20px 40px 40px; /* Réduit le padding top pour plus d'espace */
+  height: 100%;
+  overflow-y: auto; /* ← SCROLL INTERNE */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style pour l'image Figma */
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustement du header pour qu'il reste fixe */
+.modal-header {
+  position: relative;
+  top: 0;
+  background: white;
+  padding: 20px 0;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 20px;
+}
+
+
+
+.cursor-tooltip {
+  background: rgba(0, 0, 0, 0.475);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 9999;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-rectangle {
+    width: 90vw;
+    height: 70vh;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+  
+  .project-title-side {
+    left: -70px;
+    font-size: 1.4rem;
+  }
+  
+  .project-number {
+    font-size: 1rem;
+    top: 15px;
+    left: 15px;
+  }
+  
+  .project-modal {
+    width: 95%;
+    height: 85%;
+  }
+  
+  .modal-content {
+    padding: 50px 20px 20px;
+  }
+}

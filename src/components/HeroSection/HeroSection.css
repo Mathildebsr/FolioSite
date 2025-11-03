@@ -1,0 +1,33 @@
+.home-section {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subtitle {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  min-height: 60px;
+  color: #ffffff;
+  transform: translateY(10rem);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-section {
+    min-height: 100vh;
+    padding: 40px 0;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    min-height: 50px;
+    margin-top: 1rem;
+    transform: translateY(10rem);
+  }
+}

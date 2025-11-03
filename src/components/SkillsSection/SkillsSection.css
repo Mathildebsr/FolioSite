@@ -1,0 +1,174 @@
+.skills-section {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+  overflow: visible !important;
+}
+
+.skills-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 70vh;
+  overflow: visible !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -50px;
+}
+
+/* CONTENEUR PARENT DRAGGABLE */
+.sticker-with-tooltip {
+  position: absolute;
+  cursor: grab;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sticker-with-tooltip:active {
+  cursor: grabbing;
+}
+
+/* Wrapper pour le sticker - IMPORTANT: NE PAS BLOQUER LES ÉVÉNEMENTS */
+.sticker-wrapper {
+  position: relative;
+  z-index: 1;
+  /* pointer-events: auto; ← Doit être actif pour le hover */
+}
+
+/* TOOLTIP - ENFANT DU PARENT DRAGGABLE */
+.frozen-tooltip {
+  position: absolute;
+  bottom: calc(100% + 15px);
+  left: 50%;
+  transform: translateX(0%);  /* 🎯 CORRECTION: -50% pour centrer */
+  z-index: 1000;
+  animation: tooltipAppear 0.3s ease-out;
+}
+
+.tooltip-content {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 8px 16px;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  white-space: nowrap;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Pointe du tooltip */
+.tooltip-content::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Reflet frozen subtil */
+.tooltip-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, 
+    rgba(255, 255, 255, 0.08) 0%,
+    transparent 100%);
+  border-radius: 12px 12px 0 0;
+  pointer-events: none;
+}
+
+/* ANIMATION SIMPLE - CORRIGÉE */
+@keyframes tooltipAppear {
+  0% {
+    opacity: 0;
+    transform: translateX(-0%) translateY(10px);  /* 🎯 -50% pour centrer */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-0%) translateY(0);  /* 🎯 -50% pour centrer */
+  }
+}
+
+/* Hover sur le conteneur parent */
+.sticker-with-tooltip:hover {
+  z-index: 20;
+}
+
+/* VERSION MOBILE */
+@media (max-width: 768px) {
+  .skills-content {
+    height: 70vh !important;
+    transform: translateX(-20px) !important; /* Léger décalage gauche */
+  }
+
+  .sticker-with-tooltip {
+    transform: scale(0.9); /* Légèrement plus petit */
+  }
+
+  /* Tooltip plus petit sur mobile */
+  .tooltip-content {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+  /* Meilleure zone de drag sur mobile */
+  .sticker-with-tooltip {
+    touch-action: pan-x pan-y;
+  }
+
+  .skills-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 70vh;
+  overflow: visible !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+}
+
+/* TRÈS PETITS ÉCRANS */
+@media (max-width: 480px) {
+  .skills-content {
+    height: 65vh !important;
+    transform: translateX(-15px) !important;
+  }
+
+  .sticker-with-tooltip {
+    transform: scale(0.85);
+  }
+
+  .skills-content {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  height: 70vh;
+  overflow: visible !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -10px;
+}
+}

@@ -1,0 +1,401 @@
+.about-section {
+  background: #0a0a0a;
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+}
+
+.feuilles-container {
+  position: relative;
+  width: 80%;
+  max-width: 1000px;
+  height: 700px;
+  perspective: 1000px;
+  margin: 40px auto 40px;
+}
+
+/* Bloc horizontal texte + carrousel */
+.feuille-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex: 1;
+}
+
+.feuille {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border-radius: 15px;
+  padding: 60px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  transform-origin: center;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  overflow: hidden;
+}
+
+.feuille.active {
+  transform: translateY(0) rotate(0deg) scale(1);
+  z-index: 100;
+  cursor: default;
+}
+
+.feuille.inactive {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.feuille-1 {
+  transform: translateY(20px) rotate(-2deg);
+  z-index: 3;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.feuille-2 {
+  transform: translateY(40px) rotate(3deg);
+  z-index: 2;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.feuille-3 {
+  transform: translateY(60px) rotate(-1deg);
+  z-index: 1;
+  background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+}
+
+.feuille-1:hover:not(.active) {
+  transform: translateY(10px) rotate(-1deg) scale(1.02);
+}
+
+.feuille-2:hover:not(.active) {
+  transform: translateY(20px) rotate(2deg) scale(1.02);
+}
+
+.feuille-3:hover:not(.active) {
+  transform: translateY(30px) rotate(0deg) scale(1.02);
+}
+
+.feuille:hover:not(.active) {
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+}
+
+/* MODIFICATION PRINCIPALE : Header en flex pour texte gauche/carrousel droit */
+.feuille-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  position: relative;
+  gap: 40px; /* Espace entre texte et carrousel */
+}
+
+.feuille-title {
+  font-size: 2rem;
+  color: #eb3636;
+  margin-bottom: 10px;
+  flex: 1; /* Prend l'espace disponible */
+  font-family: 'Biro Script Plus', cursive;
+  font-size: 2.8rem; /* Un peu plus grand pour la police script */
+}
+
+.feuille-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.feuille-close:hover {
+  color: #f42e2e;
+}
+
+/* CARROUSEL À DROITE */
+.carousel-container {
+  width: 250px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  position: relative;
+  margin-top: 30px;
+  flex-shrink: 0; /* Empêche le carrousel de rétrécir */
+}
+
+.carousel-slides {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* TEXTE À GAUCHE */
+.texte-contenu {
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  overflow-y: auto;
+  padding-right: 20px;
+}
+
+
+
+/* Dot Menu */
+.dot-menu {
+  position: absolute;
+  left: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 200;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(1.2);
+}
+
+.dot.active {
+  background: #ff66b2;
+  transform: scale(1.3);
+}
+
+.dot::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.dot:hover::after {
+  opacity: 1;
+}
+
+.feuille-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 102, 178, 0.9);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.typing-line {
+  margin-bottom: 20px;
+  min-height: 1.6em;
+}
+
+/* Styles pour le CV image */
+.cv-image-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin-top: -30px;
+}
+
+.cv-image-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cv-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.cv-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.download-btn {
+  padding: 9px;
+  border-radius: 60px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  background: #000000;
+  color: white;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(240, 240, 240, 0.298);
+}
+
+.download-btn.downloading {
+  background: #000000; 
+  transform: scale(0.95);
+}
+
+.download-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1); /* Rend l'icône blanche */
+  transition: transform 0.3s ease;
+  transform: translateY(-2px);
+}
+
+/* Animation de succès */
+.download-btn.downloading .download-icon {
+  animation: downloadBounce 0.6s ease;
+}
+
+@keyframes downloadBounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+
+
+/* Video */
+.video-container {
+  padding: 20px;
+  text-align: center;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 0;
+    min-height: 110vh;
+  }
+  
+  .feuilles-container {
+    width: 95%;
+    height: 800px;
+    margin: 20px auto 0;
+  }
+
+  .feuille-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feuille {
+    padding: 30px 15px;
+  }
+  
+  .feuille-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .carousel-container {
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+  
+  .dot-menu {
+    left: -60px;
+  }
+  
+  .texte-contenu {
+    padding-right: 10px;
+    margin-top: 0;
+  }
+  
+  .feuille-title {
+    font-size: 1.5rem;
+  }
+  
+  .about-section .scroll-float {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .feuille-title {
+    font-size: 1.3rem;
+  }
+  
+  .feuilles-container {
+    height: 900px;
+  }
+  
+  .about-section {
+    min-height: 120vh;
+  }
+  
+  .carousel-container {
+    height: 150px;
+  }
+}

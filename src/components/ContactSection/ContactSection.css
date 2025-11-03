@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.contact-section {
+  background: #0a0a0a;
+  position: relative;
+  z-index: 10;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* LAYOUT */
+.contact-layout {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+  margin-top: 40px;
+}
+
+.profile-card-column {
+  flex: 0 0 45%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-column {
+  flex: 1;
+}
+
+.contact-profile-card {
+  height: 400px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* HEADER FORMULAIRE */
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 2.2rem;
+  color: #ff66b2;
+  margin-bottom: 10px;
+}
+
+.form-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* FORMULAIRE */
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 102, 178, 0.3);
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ff66b2;
+  box-shadow: 0 0 20px rgba(255, 102, 178, 0.3);
+}
+
+.form-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* BOUTON */
+.submit-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 15px 40px;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  width: 100%;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+  background: #f8f8f8;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* MESSAGE SUCCÈS */
+.success-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(10, 10, 10, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  text-align: center;
+  border: 1px solid rgba(255, 102, 178, 0.5);
+  z-index: 1000;
+  transition: all 0.5s ease;
+}
+
+.success-message.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-layout {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center; /* Ajouté pour centrer */
+    text-align: center;
+  }
+
+  .profile-card-column {
+    width: 100%;
+    order: -1;
+    justify-content: center;
+  }
+
+  .contact-profile-card {
+    height: 350px;
+    max-width: 280px;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+  }
+
+  .form-input {
+    padding: 12px;
+  }
+
+  .submit-btn {
+    padding: 12px 30px;
+  }
+
+  .form-column {
+    width: 100%;
+    max-width: 500px; /* Limite la largeur du formulaire */
+    margin: 0 auto; /* Centre le formulaire */
+  }
+
+}
+
+@media (max-width: 480px) {
+  .contact-profile-card {
+    height: 320px;
+    max-width: 260px;
+    align-items: center; /* Ajouté pour centrer */
+    text-align: center;
+  }
+
+  .form-title {
+    font-size: 1.6rem;
+  }
+
+  .form-subtitle {
+    font-size: 1rem;
+  }
+
+  .form-column {
+    max-width: 100%; /* Prend toute la largeur sur très petits écrans */
+    padding: 0 15px; /* Ajoute un peu d'espace sur les côtés */
+  }
+}
