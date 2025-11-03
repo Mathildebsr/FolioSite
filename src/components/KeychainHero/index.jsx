@@ -76,11 +76,11 @@ const KeychainHero = () => {
   const [tooltipText, setTooltipText] = useState('');
 
   const keychains = [
-    { id: 1, image: '/images/plasticcycles.png', name: 'Plastic Cycles', section: '#home', label: 'Accueil' },
-    { id: 2, image: '/images/pearlcycles.png', name: 'Pearl Cycles', section: '#about', label: 'À propos' },
-    { id: 3, image: '/images/keycycles.png', name: 'Key Cycles', section: '#projects', label: 'Projets' },
-    { id: 4, image: '/images/skillscycles.png', name: 'Skills Cycles', section: '#skills', label: 'Compétences' },
-    { id: 5, image: '/images/8ballscycles.png', name: '8 Balls Cycles', section: '#contact', label: 'Contact' }
+    { id: 1, image: '/FolioSite/images/plasticcycles.png', name: 'Plastic Cycles', section: '#home', label: 'Accueil' },
+    { id: 2, image: '/FolioSite/images/pearlcycles.png', name: 'Pearl Cycles', section: '#about', label: 'À propos' },
+    { id: 3, image: '/FolioSite/images/keycycles.png', name: 'Key Cycles', section: '#projects', label: 'Projets' },
+    { id: 4, image: '/FolioSite/images/skillscycles.png', name: 'Skills Cycles', section: '#skills', label: 'Compétences' },
+    { id: 5, image: '/FolioSite/images/8ballscycles.png', name: '8 Balls Cycles', section: '#contact', label: 'Contact' }
   ];
 
   // Détection mobile
@@ -207,7 +207,7 @@ const KeychainHero = () => {
     <div className="keychain-container">
       {/* Anneau fixe */}
       <div className="ring">
-        <img src="/images/anneau.png" alt="Anneau" />
+        <img src="/FolioSite/images/anneau.png" alt="Anneau" />
       </div>
 
       {/* Porte-clés */}

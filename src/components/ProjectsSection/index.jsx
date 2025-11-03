@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       number: '00',
       title: '',
       color: 'white',
-      image: '/images/accueilis.jpg',
+      image: '/FolioSite/images/accueilis.jpg',
       ref: whiteRectRef
     },
     {
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
       number: '01',
       title: '3D DESIGN',
       color: 'pink',
-      image: '/images/projets.jpg',
+      image: '/FolioSite/images/projets.jpg',
       ref: pinkRectRef,
       initialY: '160vh'
     },
@@ -46,7 +46,7 @@ const ProjectsSection = () => {
       number: '02',
       title: 'TOXIQUE',
       color: 'blue', 
-      image: '/images/competences.jpg',
+      image: '/FolioSite/images/competences.jpg',
       ref: blueRectRef,
       initialY: '230vh'
     },
@@ -55,7 +55,7 @@ const ProjectsSection = () => {
       number: '03',
       title: 'RIBAMBELLE',
       color: 'orange',
-      image: '/images/about.jpg',
+      image: '/FolioSite/images/about.jpg',
       ref: orangeRectRef, 
       initialY: '300vh'
     },
@@ -64,7 +64,7 @@ const ProjectsSection = () => {
       number: '04',
       title: 'BROWSOW',
       color: 'purple',
-      image: '/images/accueil.jpg',
+      image: '/FolioSite/images/accueil.jpg',
       ref: purpleRectRef,
       initialY: '370vh'
     }

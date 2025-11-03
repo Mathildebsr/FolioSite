@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import './ProfileCard3D.css';
 
 const ProfileCard3D = ({
-  avatarUrl = "/images/avatar.png",
+  avatarUrl = "/FolioSite/images/avatar.png",
   name = "Mathilde",
   title = "Développeuse & Webdesigner", 
   enableTilt = true
@@ -140,10 +140,10 @@ const ProfileCard3D = ({
 
   // Réseaux sociaux
   const socialLinksData = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mathilde-biscaro-08a787222', image: '/images/linkedin-icon.png', color: '#0077b5' },
-    { name: 'GitHub', url: 'https://github.com/Mathildebsr', image: '/images/github-icon.png', color: '#333' },
-    { name: 'Instagram', url: 'https://www.instagram.com/mathildebiscaro', image: '/images/instagram-icon.png', color: '#e4405f' },
-    { name: 'Behance', url: 'https://www.behance.net/mathildebiscaro', image: '/images/behance-icon.png', color: '#1769ff' }
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/in/mathilde-biscaro-08a787222', image: '/FolioSite/images/linkedin-icon.png', color: '#0077b5' },
+    { name: 'GitHub', url: 'https://github.com/Mathildebsr', image: '/FolioSite/images/github-icon.png', color: '#333' },
+    { name: 'Instagram', url: 'https://www.instagram.com/mathildebiscaro', image: '/FolioSite/images/instagram-icon.png', color: '#e4405f' },
+    { name: 'Behance', url: 'https://www.behance.net/mathildebiscaro', image: '/FolioSite/images/behance-icon.png', color: '#1769ff' }
   ];
 
   return (

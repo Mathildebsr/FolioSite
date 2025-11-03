@@ -25,9 +25,9 @@ const AboutSection = () => {
   };
 
   const carouselImages = [
-    "/images/about-1.jpg",
-    "/images/about-2.jpg", 
-    "/images/about-3.jpg"
+    "/FolioSite/images/about-1.jpg",
+    "/FolioSite/images/about-2.jpg", 
+    "/FolioSite/images/about-3.jpg"
   ];
 
   useEffect(() => {
@@ -173,9 +173,9 @@ const AboutSection = () => {
               <video 
                 controls 
                 width="100%"
-                poster="/images/video-preview.jpg"
+                poster="/FolioSite/images/video-preview.jpg"
               >
-                <source src="/videos/motivation.mp4" type="video/mp4" />
+                <source src="/FolioSite/videos/motivation.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas la lecture vidéo.
               </video>
             </div>

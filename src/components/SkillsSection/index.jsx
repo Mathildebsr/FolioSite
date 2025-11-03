@@ -98,19 +98,19 @@ const SkillsSection = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   const skills = [
-    { name: 'Figma', image: '/images/figma.png' },
-    { name: 'JavaScript', image: '/images/javascript.png' },
-    { name: 'Lightroom', image: '/images/lightroom.png' },
-    { name: 'CSS', image: '/images/css.png' },
-    { name: 'React', image: '/images/react.png' },
-    { name: 'Framer', image: '/images/framer.png' },
-    { name: 'HTML', image: '/images/html.png' },
-    { name: 'After Effect', image: '/images/after.png' },
-    { name: 'Premiere Pro', image: '/images/premiere.png' },
-    { name: 'Photoshop', image: '/images/photoshop.png' },
-    { name: 'Illustrator', image: '/images/illustrator.png' },
-    { name: 'InDesign', image: '/images/indesign.png' },
-    { name: 'Blender', image: '/images/blender.png' },
+    { name: 'Figma', image: '/FolioSite/images/figma.png' },
+    { name: 'JavaScript', image: '/FolioSite/images/javascript.png' },
+    { name: 'Lightroom', image: '/FolioSite/images/lightroom.png' },
+    { name: 'CSS', image: '/FolioSite/images/css.png' },
+    { name: 'React', image: '/FolioSite/images/react.png' },
+    { name: 'Framer', image: '/FolioSite/images/framer.png' },
+    { name: 'HTML', image: '/FolioSite/images/html.png' },
+    { name: 'After Effect', image: '/FolioSite/images/after.png' },
+    { name: 'Premiere Pro', image: '/FolioSite/images/premiere.png' },
+    { name: 'Photoshop', image: '/FolioSite/images/photoshop.png' },
+    { name: 'Illustrator', image: '/FolioSite/images/illustrator.png' },
+    { name: 'InDesign', image: '/FolioSite/images/indesign.png' },
+    { name: 'Blender', image: '/FolioSite/images/blender.png' },
   ];
 
   // Détection responsive
