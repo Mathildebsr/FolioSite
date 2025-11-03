@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://mathildebsr.github.io/nom-du-repo",
+  "homepage": "https://mathildebsr.github.io/FolioSite",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
