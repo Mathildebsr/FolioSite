@@ -137,13 +137,13 @@ const AboutSection = () => {
             <div className="cv-image-container">
               <div className="cv-image-wrapper">
                 <img 
-                  src="/images/moncv.jpg" 
+                  src="/FolioSite/images/moncv.jpg" 
                   alt="Mon Curriculum Vitae"
                   className="cv-image"
                 />
                 <div className="cv-actions">
                   <a 
-    href="/images/moncv.jpg" 
+    href="/FolioSite/images/moncv.jpg" 
     download 
     className={`download-btn ${isDownloading ? 'downloading' : ''}`}
     title="Télécharger le CV"

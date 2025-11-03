@@ -185,7 +185,7 @@ const ProjectsSection = () => {
           
           {/* Image Figma avec tout le contenu */}
           <img 
-            src={`/images/content-${selectedProject.id}.png`} 
+            src={`/FolioSite/images/content-${selectedProject.id}.png`} 
             alt={`Projet ${selectedProject.title}`}
             className="modal-image"
           />
