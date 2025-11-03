@@ -150,7 +150,7 @@ const AboutSection = () => {
     onClick={handleDownload}
   >
     <img 
-      src={isDownloading ? "/images/download-success.png" : "/images/download.png"}
+      src={isDownloading ? "/FolioSite/images/download-success.png" : "/FolioSite/images/download.png"}
       alt="Télécharger" 
       className="download-icon"
     />
