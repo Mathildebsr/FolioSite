@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/FolioSite/',  // nom de ton repo GitHub Pages
   plugins: [react()],
   assetsInclude: ['**/*.glb', '**/*.png'],
   optimizeDeps: {
@@ -10,6 +11,6 @@ export default defineConfig({
   },
   server: {
     port: 3000,
-    open: true // Ouvre le navigateur automatiquement
+    open: true // ouvre le navigateur automatiquement
   }
 })
