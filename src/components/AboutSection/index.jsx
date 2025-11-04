@@ -166,7 +166,7 @@ const AboutSection = () => {
             onClick={(e) => handleFeuilleClick('lettre', e)}
           >
             <div className="feuille-header">
-              <h2 className="feuille-title">Et si on faisait connaissance</h2>
+              <h2 className="feuille-title">Et si on faisait un peu plus connaissance...</h2>
               <button className="feuille-close" onClick={() => activatePage('apropos')}>×</button>
             </div>
             <div className="video-container">

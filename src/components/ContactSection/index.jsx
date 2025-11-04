@@ -54,8 +54,8 @@ const ContactSection = () => {
           {/* Formulaire */}
           <div className="form-column">
             <div className="form-header">
-              <h2 className="form-title">Contactez-moi</h2>
-              <p className="form-subtitle">Discutons de votre projet</p>
+              <h2 className="form-title">Prêt à collaborer ?</h2>
+              <p className="form-subtitle">N’hésitez plus, contactez-moi !</p>
             </div>
             <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
               <div className="form-group">
