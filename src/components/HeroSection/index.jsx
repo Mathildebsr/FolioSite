@@ -31,12 +31,24 @@ const HeroSection = () => {
           />
         </div>
         
-        {/* Porte-clés */}
-        <KeychainHero />
         
-        <div className="subtitle">
-          <TextType 
-            text={["Développeuse & Webdesigner", "Créative Polyvalente", "Bienvenue sur mon portfolio","Faire que chaque idée compte","Création d'univers uniques"]}
+          {/* KeychainHero */}
+          <KeychainHero />
+          
+         {/* Postit */}
+<div className="postit-container">
+  <div className="postit">
+    <img 
+      src="/FolioSite/images/postit.png" 
+      alt="Mathilde Biscaro" 
+      className="postit-image"
+    />
+  </div>
+</div>
+
+        <div className="main-subtitle">
+          <TextType
+            text={["Développeuse & Webdesigner", "Créative Polyvalente", "Bienvenue sur mon portfolio", "Faire que chaque idée compte", "Création d'univers uniques"]}
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}

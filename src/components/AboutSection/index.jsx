@@ -11,7 +11,7 @@ const AboutSection = () => {
   const textLines = [
     "Hello, moi c'est Mathilde ! Je crois que la créativité commence souvent par la curiosité.",
     "Depuis toujours, j'ai besoin de comprendre, d'explorer, de toucher à tout, que ce soit une idée, une matière ou un univers visuel. C'est ce qui me pousse à créer des projets qui ont du sens, du style, et un petit quelque chose en plus.",
-    "Pour moi, le design, c'est avant tout une histoire à raconter. Chaque projet est une rencontre, un terrain de jeu où j'aime transformer une idée en une expérience visuelle qui parle d'elle-même. J'accorde autant d'importance à l'émotion qu'à l'esthétique, parce que l'un sans l'autre, c'est joli... mais pas vivant.",
+    "Pour moi, créer, c'est avant tout une histoire à raconter. Chaque projet est une rencontre, un terrain de jeu où j'aime transformer une idée en une expérience visuelle qui touche et captive. J'accorde autant d'importance à l'émotion qu'à l'esthétique, parce que l'un sans l'autre, c'est joli... mais pas vivant.",
     "Je mets mon énergie, mon audace et ma curiosité au service de chaque création, avec toujours la même envie : donner vie à des idées à travers des visuels qui captent l'attention et racontent quelque chose de vrai."
   ];
 

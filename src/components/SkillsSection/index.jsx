@@ -147,7 +147,7 @@ const SkillsSection = () => {
     } else if (index < 9) {
       // Ligne 2 (milieu) - 5 éléments
       return {
-        x: ((index - 4) * horizontalSpacing) - 440,
+        x: ((index - 4.2) * horizontalSpacing) - 400,
         y: -50
       };
     } else {

@@ -9,7 +9,7 @@ const FolderSection = () => {
     if (projectName === "What's in my bag" || 
         projectName === "Visit my room" || 
         projectName === "The lost laptop") {
-      window.location.href = '/404.html';
+      window.location.href = 'https://mathildebsr.github.io/404/';
       return;
     }
     

@@ -38,6 +38,7 @@
   transform: translate(-140%, -40%) rotateZ(-25deg) !important; /* Remontée */
 }
 
+
 /* Responsive */
 @media (max-width: 768px) {
   .folder-content {
